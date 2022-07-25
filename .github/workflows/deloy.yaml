@@ -37,4 +37,4 @@ jobs:
           SOURCE: "docs/.vitepress/dist/"
           REMOTE_HOST: ${{ env.SERVER_HOST }}
           REMOTE_USER: ${{ env.USER_NAME }}
-          TARGET: /home/ubuntu/orz
+          TARGET: /home/ubuntu/orz/
