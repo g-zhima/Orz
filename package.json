@@ -1,8 +1,8 @@
 {
-  "name": "blog",
+  "name": "orz",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Orz",
+  "packageManager": "pnpm@7.1.0",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
