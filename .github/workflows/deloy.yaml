@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+env:
+  SERVER_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }}
+  SERVER_HOST: ${{ secrets.SERVER_HOST }}
+  USER_NAME: ${{ secrets.USER_NAME }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -25,8 +30,11 @@ jobs:
       - name: Build
         run: pnpm docs:build
 
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: docs/.vitepress/dist
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@v2.0.7
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
+          SOURCE: "docs/.vitepress/dist/"
+          REMOTE_HOST: ${{ env.SERVER_HOST }}
+          REMOTE_USER: ${{ env.USER_NAME }}
+          TARGET: /home/ubuntu/orz
