@@ -3,6 +3,8 @@ title: Blogging Like a Hacker
 lang: en-US
 ---
 
+![](https://s3.bmp.ovh/imgs/2022/07/26/26570030f508dc34.jpg)
+
 ## {{ $frontmatter.title }}
 
 ::: info
